@@ -1,0 +1,7 @@
+.App {
+  --padding: 0.5rem;
+}
+
+.App > h2 {
+  padding: var(--padding);
+}
