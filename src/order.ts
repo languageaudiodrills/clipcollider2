@@ -49,7 +49,7 @@ const order: Item[] = [
     key: "nowPayAttentionForThePhrase",
   },
   {
-    key: "spanishPhrase",
+    key: "spanishPhraseSlowedDown",
   },
   {
     key: "inTheFollowing3Examples",
@@ -61,21 +61,21 @@ const order: Item[] = [
 // 15
   {
     key: "example1",
-    space: 2,
+    space: 1.5,
   },
   {
     key: "ejemploDos",
   },
   {
     key: "example2",
-    space: 2,
+    space: 1.5,
   },
   {
     key: "ejemploTres",
   },
   {
     key: "example3",
-    space: 2,
+    space: 1.5,
   },
 // 20
   {
