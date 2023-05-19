@@ -1,6 +1,6 @@
 const clipNamesByType = {
-  englishPhrase: "English phrase",
   spanishPhrase: "Spanish phrase",
+  englishPhrase: "English phrase",
   spanishPhraseSlowedDown: "Spanish phrase slowed down",
   example1: "Example 1",
   example2: "Example 2",

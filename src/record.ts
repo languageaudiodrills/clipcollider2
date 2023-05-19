@@ -27,7 +27,7 @@ const record = (p: {
     index++;
 
     // Keep playing while there are more clips to play
-    if (index < 5) {
+    if (index < clips.length) {
       const { space = 0 } = order[index];
       const { clip = 0 } = order[index];
       const player = clips[index];
