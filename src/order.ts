@@ -61,21 +61,21 @@ const order: Item[] = [
 // 15
   {
     key: "example1",
-    space: 1.5,
+    space: 1,
   },
   {
     key: "ejemploDos",
   },
   {
     key: "example2",
-    space: 1.5,
+    space: 1,
   },
   {
     key: "ejemploTres",
   },
   {
     key: "example3",
-    space: 1.5,
+    space: 1,
   },
 // 20
   {
