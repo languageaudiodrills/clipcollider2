@@ -29,20 +29,23 @@ const order: Item[] = [
   },
   {
     key: "spanishPhraseSlowedDown",
-    clip: 0.5,
+    clip: 0.4,
   },
   {
     key: "asTheAudioLoops3Times",
   },
   {
     key: "spanishPhraseSlowedDown",
+    clip: 0.4,
   },
   {
     key: "spanishPhraseSlowedDown",
+    clip: 0.4,
   },
 // 10
   {
     key: "spanishPhraseSlowedDown",
+    clip: 0.4,
     space: 1,
   },
   {
@@ -50,10 +53,11 @@ const order: Item[] = [
   },
   {
     key: "spanishPhraseSlowedDown",
+    clip: 0.4,
   },
   {
     key: "inTheFollowing3Examples",
-    space: 1.5,
+    space: 1,
   },
   {
     key: "ejemploUno",
