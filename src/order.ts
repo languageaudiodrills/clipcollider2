@@ -4,7 +4,9 @@ type Item = {
   clip?: number;
 };
 
-const order: Item[] = [
+
+
+const colliderOrder: Item[] = [
   {
     key: "theSpanishPhrase",
   },
@@ -104,5 +106,64 @@ const order: Item[] = [
     space: 2,
   },
 ];
+
+
+const looperOrder: Item[] = [
+  // practice mimicking along with the phrase...
+  {
+    key: "nowPayAttentionForThePhrase",
+  },
+
+  // slowed
+  {
+    key: "spanishPhraseSlowedDown",
+  },
+
+  // as the audio loops 10 times
+  {
+    key: "asTheAudioLoops3Times",
+  },
+
+  // 3 slow
+  {
+    key: "spanishPhraseSlowedDown",
+  },
+  {
+    key: "spanishPhraseSlowedDown",
+  },
+  {
+    key: "spanishPhraseSlowedDown",
+  },
+
+  // 7 normal
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+    space: 2,
+  },
+];
+
+
+const order = {
+  collide: colliderOrder,
+  looper: looperOrder,
+};
 
 export default order;
