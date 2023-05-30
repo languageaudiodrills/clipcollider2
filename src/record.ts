@@ -1,13 +1,14 @@
 import * as Tone from "tone";
 import download from "./download";
-import order from "./order";
 
 const record = (p: {
   output: Tone.Volume;
   name: string;
   clips: Tone.Player[];
+  order: any;
 }) => {
-  const { output, name, clips } = p;
+  console.log('1')
+  const { output, name, clips, order } = p;
 
   // Try to output an mp4 if possible
   const mp4Type = "audio/mp4";
@@ -22,6 +23,8 @@ const record = (p: {
 
   // Play each clip
   let index = -1;
+
+  console.log('hi')
 
   const playNext = () => {
     index++;

@@ -20,7 +20,7 @@ const App = () => {
     example3: useRef<HTMLInputElement>(null),
   };
 
-  const getURLsAndProcess = () => {
+  const getURLsAndProcess = ({orderString}: {orderString: string}) => {
     const urls: Record<string, string> = {};
 
     // Get URLs for each uploaded clip
@@ -43,6 +43,7 @@ const App = () => {
       autoLevel,
       name,
       urls,
+      orderString
     });
   };
 
@@ -84,7 +85,12 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={getURLsAndProcess}>Collide</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'collide'})}>Collide</button>
+      </Row>
+
+      {/* Looper button */}
+      <Row name="">
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looper'})}>Looper</button>
       </Row>
     </div>
   );

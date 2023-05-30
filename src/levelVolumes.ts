@@ -1,5 +1,11 @@
 import * as Tone from "tone";
-import order from "./order";
+
+
+type Item = {
+  key: string;
+  space?: number;
+  clip?: number;
+};
 
 // Note: Ideally this would take clips as input
 // and output new clips with adjusted volumes
@@ -8,8 +14,9 @@ import order from "./order";
 const levelVolumes = async (p: {
   output: Tone.Volume;
   clips: Tone.Player[];
+  order: Item[];
 }): Promise<void> => {
-  const { output, clips } = p;
+  const { output, clips, order } = p;
 
   // Set up promise to resolve later on
   let resolve: () => void = () => {};
