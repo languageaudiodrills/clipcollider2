@@ -10,7 +10,6 @@ const processFiles = async (p: {
   urls: Record<string, string>;
   orderString: string;
 }) => {
-
   
   const { autoLevel, name, urls, orderString } = p;
 

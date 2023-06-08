@@ -108,20 +108,18 @@ const colliderOrder: Item[] = [
 ];
 
 
+
+
 const looperOrder: Item[] = [
   // practice mimicking along with the phrase...
   {
-    key: "nowPayAttentionForThePhrase",
+    key: "practiceMimickingThePhrase",
   },
-
-  // slowed
   {
     key: "spanishPhraseSlowedDown",
   },
-
-  // as the audio loops 10 times
   {
-    key: "asTheAudioLoops3Times",
+    key: "asTheAudioLoopsAtReducedSpeed",
   },
 
   // 3 slow
@@ -135,7 +133,20 @@ const looperOrder: Item[] = [
     key: "spanishPhraseSlowedDown",
   },
 
+  {
+    key: "nowContinue",
+  },
+
   // 7 normal
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
+  {
+    key: "spanishPhrase",
+  },
   {
     key: "spanishPhrase",
   },
