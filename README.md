@@ -1,3 +1,3 @@
 # The Clip Collider
 
-Web app to stitch clips together.
+An internal use only tool used to create customized audio clips for a future spanish learning service.
