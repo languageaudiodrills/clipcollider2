@@ -5,7 +5,9 @@ const clipNamesByType = {
   example1: "Example 1",
   example2: "Example 2",
   example3: "Example 3",
-} as const;
+} as {
+  [key: string]: string,
+};
 
 type ClipType = keyof typeof clipNamesByType;
 

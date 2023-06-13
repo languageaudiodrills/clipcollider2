@@ -10,18 +10,12 @@ const processFiles = async (p: {
   urls: Record<string, string>;
   orderString: string;
 }) => {
-  
+  // get argument valkues  
   const { autoLevel, name, urls, orderString } = p;
 
-  // NOTE: MAGIC NUMBER
-  // The first number comes from the number of files in public/audio
-  // let count = 12 + Object.values(selectedOrder).length;
-
-  const selectedOrder = (orderString === 'collide')? order.collide : order.looper;
-  
+  // get the desired order and length
+  const selectedOrder = order[orderString];
   let count = Object.values(selectedOrder).length;
-
-  console.log(selectedOrder);
 
   // Make sure Tone.js is ready to go
   await Tone.start();
@@ -29,8 +23,7 @@ const processFiles = async (p: {
   const clips: Tone.Player[] = [];
   const output = new Tone.Volume(0).toDestination();
 
-  // After all players have been loaded,
-  // level volumes and record
+  // Level volumes and record after all players have been loaded
   const onload = async () => {
     count -= 1;
     if (count === 0) {
@@ -41,11 +34,12 @@ const processFiles = async (p: {
       record( {output: output, name: name, clips: clips, order: selectedOrder} );
     }
   };
-  console.log('1111111');
 
   // Load a player for each item in order
   for (const { key } of selectedOrder) {
     console.log(key);
+    // check if clip is already loaded (input files)
+    // or if needs to be laoded from audio (prerecorded)
     const url = key in urls ? urls[key] : `audio/${key}.wav`;
     const player = new Tone.Player({
       url,

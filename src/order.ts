@@ -116,65 +116,79 @@ const looperOrder: Item[] = [
     key: "practiceMimickingThePhrase",
   },
   {
-    key: "spanishPhraseSlowedDown",
+    key: "spanishPhrase",
+    clip: 0.5,
   },
-  {
-    key: "asTheAudioLoopsAtReducedSpeed",
-  },
+  // {
+  //   key: "asTheAudioLoopsAtReducedSpeed",
+  // },
 
-  // 3 slow
-  {
-    key: "spanishPhraseSlowedDown",
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-  },
+  // // 3 slow
+  // {
+  //   key: "spanishPhraseSlowedDown",
+  //   clip: 0.6,
+  // },
+  // {
+  //   key: "spanishPhraseSlowedDown",
+  //   clip: 0.6,
+  // },
+  // {
+  //   key: "spanishPhraseSlowedDown",
+  //   clip: 0.6,
+  // },
 
-  {
-    key: "nowContinue",
-  },
+  // {
+  //   key: "nowContinue",
+  // },
 
-  // 7 normal
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-  },
-  {
-    key: "spanishPhrase",
-    space: 2,
-  },
+  // // 7 normal
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  // },
+  // {
+  //   key: "spanishPhrase",
+  //   clip: 0.4,
+  //   space: 2,
+  // },
 ];
 
 
 const order = {
-  collide: colliderOrder,
+  collider: colliderOrder,
   looper: looperOrder,
-};
+} as { [key: string]: Item[]};
 
 export default order;

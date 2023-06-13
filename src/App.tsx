@@ -11,31 +11,55 @@ const App = () => {
   const [autoLevel, setAutoLevel] = useState(false);
 
   // Refs to file inputs
-  const refs = {
+  const inputs = {
     spanishPhrase: useRef<HTMLInputElement>(null),
     englishPhrase: useRef<HTMLInputElement>(null),
     spanishPhraseSlowedDown: useRef<HTMLInputElement>(null),
     example1: useRef<HTMLInputElement>(null),
     example2: useRef<HTMLInputElement>(null),
     example3: useRef<HTMLInputElement>(null),
+  } as {
+    [key: string]: React.RefObject<HTMLInputElement>,
+  };
+  
+
+  const reqFiles = {
+    collider: [
+      'spanishPhrase',
+      'englishPhrase',
+      'spanishPhraseSlowedDown',
+      'example1',
+      'example2',
+      'example3',
+    ], 
+    looper: [
+      'spanishPhrase',
+      'spanishPhraseSlowedDown',
+    ]
+  } as {
+    [key: string]: string[],
   };
 
   const getURLsAndProcess = ({orderString}: {orderString: string}) => {
     const urls: Record<string, string> = {};
 
-    // Get URLs for each uploaded clip
-    for (const [key, ref] of Object.entries(refs)) {
-      const files = ref.current!.files;
+    // get the required file list for the selected recording to be produced
+    const fileNameList = reqFiles[orderString];
 
+    for (const [key, fileName] of Object.entries(fileNameList)){
+      // get the corresponding file from the list
+      const files = inputs[fileName].current!.files;
+
+      // if a file has not been submitted
       if (files === null || files.length === 0) {
-        alert(`Missing ${clipNamesByType[key as ClipType]}`);
+        alert(`Missing ${clipNamesByType[fileName]}`);
         return;
       }
 
       const file = files[0];
       const url = URL.createObjectURL(file);
 
-      urls[key] = url;
+      urls[fileName] = url;
     }
 
     // Pass off file name and urls
@@ -67,13 +91,13 @@ const App = () => {
 
       {/* Uploaded files */}
       {Object.entries(clipNamesByType).map(([type, name], index) => {
-        if (!(type in refs)) {
+        if (!(type in inputs)) {
           throw Error(`Missing ref for ${type}`);
         }
 
         return (
           <Row key={index} name={name}>
-            <input ref={refs[type as ClipType]} type="file" />
+            <input ref={inputs[type as ClipType]} type="file" />
           </Row>
         );
       })}
@@ -85,7 +109,7 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'collide'})}>Collide</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'collider'})}>Collide</button>
       </Row>
 
       {/* Looper button */}
