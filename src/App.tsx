@@ -7,8 +7,12 @@ import { ChangeEventHandler, useRef, useState } from "react";
 const App = () => {
   // Downloaded file name
   const [name, setName] = useState("clip");
+  
   // Auto-level flag
   const [autoLevel, setAutoLevel] = useState(false);
+
+  // Track type
+  const [trackType, setTrackType] = useState('phrase')
 
   // Refs to file inputs
   const inputs = {
@@ -24,7 +28,7 @@ const App = () => {
   
 
   const reqFiles = {
-    collider: [
+    flash: [
       'spanishPhrase',
       'englishPhrase',
       'spanishPhraseSlowedDown',
@@ -67,7 +71,8 @@ const App = () => {
       autoLevel,
       name,
       urls,
-      orderString
+      orderString,
+      trackType
     });
   };
 
@@ -87,6 +92,19 @@ const App = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+      </Row>
+
+      {/* Select track type */}
+      <Row name="Track type">
+        <select 
+          multiple={true}
+          onChange={e => setTrackType(e.target.value)} >
+          <option value="phrase">Phrase</option>
+          <option value="term">Term</option>
+          <option value="verbConj">Verb - Conjugated</option>
+          <option value="verbInf">Verb - Infinitive</option>
+        </select>
+        {trackType}
       </Row>
 
       {/* Uploaded files */}
@@ -109,12 +127,12 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'collider'})}>Collide</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flash'})}>Create Flashtrack</button>
       </Row>
 
       {/* Looper button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looper'})}>Looper</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looper'})}>Create Looptrack</button>
       </Row>
     </div>
   );

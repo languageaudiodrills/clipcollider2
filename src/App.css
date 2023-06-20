@@ -5,3 +5,8 @@
 .App > h2 {
   padding: var(--padding);
 }
+
+
+select {
+  overflow: hidden;
+}

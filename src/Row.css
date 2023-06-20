@@ -18,3 +18,7 @@
 .Row > .column {
   width: 50%;
 }
+
+.Row:hover {
+  background-color: #ebebeb;
+}
