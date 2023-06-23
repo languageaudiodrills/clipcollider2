@@ -3,13 +3,14 @@ type Item = {
   space?: number;
   clip?: number;
   replace?: boolean;
+  replacements?: string[];
 };
 
 
 
 const flashOrder: Item[] = [
   {
-    key: "theSpanishType",
+    key: "theSpanish",
     replace: true,
   },
   {
@@ -29,7 +30,7 @@ const flashOrder: Item[] = [
   },
 // 5
   {
-    key: "nowMimicTheType",
+    key: "nowMimicThe",
     replace: true,
   },
   {
@@ -54,7 +55,7 @@ const flashOrder: Item[] = [
     space: 1,
   },
   {
-    key: "nowPayAttentionForTheType",
+    key: "nowPayAttentionForThe",
     replace: true,
   },
   {
@@ -117,7 +118,8 @@ const flashOrder: Item[] = [
 const looperOrder: Item[] = [
   // practice mimicking along with the phrase...
   {
-    key: "practiceMimickingThePhrase",
+    key: "practiceMimickingThe",
+    replace: true,
   },
   {
     key: "spanishPhrase",
@@ -191,8 +193,8 @@ const looperOrder: Item[] = [
 
 
 const order = {
-  flash: flashOrder,
-  looper: looperOrder,
+  flashTrack: flashOrder,
+  looperTrack: looperOrder,
 } as { [key: string]: Item[]};
 
 export default order;

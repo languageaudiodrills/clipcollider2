@@ -28,7 +28,7 @@ const App = () => {
   
 
   const reqFiles = {
-    flash: [
+    flashTrack: [
       'spanishPhrase',
       'englishPhrase',
       'spanishPhraseSlowedDown',
@@ -36,7 +36,7 @@ const App = () => {
       'example2',
       'example3',
     ], 
-    looper: [
+    looperTrack: [
       'spanishPhrase',
       'spanishPhraseSlowedDown',
     ]
@@ -97,14 +97,12 @@ const App = () => {
       {/* Select track type */}
       <Row name="Track type">
         <select 
-          multiple={true}
-          onChange={e => setTrackType(e.target.value)} >
+          onChange={e => setTrackType(e.target.value)}>
           <option value="phrase">Phrase</option>
           <option value="term">Term</option>
-          <option value="verbConj">Verb - Conjugated</option>
-          <option value="verbInf">Verb - Infinitive</option>
+          <option value="conjVerb">Verb - Conjugated</option>
+          <option value="infVerb">Verb - Infinitive</option>
         </select>
-        {trackType}
       </Row>
 
       {/* Uploaded files */}
@@ -127,12 +125,12 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flash'})}>Create Flashtrack</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack</button>
       </Row>
 
       {/* Looper button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looper'})}>Create Looptrack</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack</button>
       </Row>
     </div>
   );

@@ -3,58 +3,65 @@ import levelVolumes from "./levelVolumes";
 import order, {Item} from "./order";
 import record from "./record";
 
-const swaps = {
-  flash: {
-    'phrase': [
-      'game',
-      'game',
-      'game',
-    ],
-    'term': [
-      'beep',
-      'beep',
-      'beep',
-    ],
-    'verbConj': [
-      'punch',
-      'punch',
-      'punch',
-    ],
-    'verbInf': [
-      'game',
-      'game',
-      'game',
-    ]
-  },
+// const swaps = {
+//   flash: {
+//     'phrase': [
+//       'flashTrack/intros/game',
+//       'game',
+//       'game',
+//     ],
+//     'term': [
+//       'beep',
+//       'beep',
+//       'beep',
+//     ],
+//     'verbConj': [
+//       'punch',
+//       'punch',
+//       'punch',
+//     ],
+//     'verbInf': [
+//       'game',
+//       'game',
+//       'game',
+//     ]
+//   },
   
-  looper: {
-    'phrase': [
-      'game',
-      'game',
-      'game',
-    ],
-    'term': [
-      'beep',
-      'beep',
-      'beep',
-    ],
-    'verbConj': [
-      'punch',
-      'punch',
-      'punch',
-    ],
-    'verbInf': [
-      'game',
-      'game',
-      'game',
-    ]
-  }
+//   looper: {
+//     'phrase': [
+//       'game',
+//       'game',
+//       'game',
+//     ],
+//     'term': [
+//       'beep',
+//       'beep',
+//       'beep',
+//     ],
+//     'verbConj': [
+//       'punch',
+//       'punch',
+//       'punch',
+//     ],
+//     'verbInf': [
+//       'game',
+//       'game',
+//       'game',
+//     ]
+//   }
 
-} as {
-  [key: string]: {
-    [key: string]: string[];
-  },
-};
+// } as {
+//   [key: string]: {
+//     [key: string]: string[];
+//   },
+// };
+
+// const replacements = [
+//   "phrase",
+//   "term",
+//   "conjVerb",
+//   "infVerb",
+// ];
 
 
 const modifyOrder = async(p: {
@@ -72,12 +79,16 @@ const modifyOrder = async(p: {
     const item = order[i];
 
     if(item.replace){
-      const keyString: string = swaps[orderString][typeString][keyCounter];
-      keyCounter++;
+      // the order string is the first folder, then the sound clip that is being played is the second
+      // and the third is according to the track type
+      // ex:              flashTrack    /       intros          /       conjVerb
+      const fileString =  orderString + "/" +   order[i].key +  "/"  +  typeString;
+
+      console.log(fileString);
 
       // replace if needed
       const newItem: Item = {
-        key: keyString,
+        key: fileString,
       }
       order[i] = newItem; 
     }
@@ -104,12 +115,6 @@ const processFiles = async (p: {
   
   // make swaps to order
   modifyOrder({order: selectedOrder, orderString: orderString, typeString: trackType});
-
-  console.log('after modifying');
-  for( const {key} of selectedOrder){
-    console.log(key);
-  }
-
 
   // Make sure Tone.js is ready to go
   await Tone.start();
