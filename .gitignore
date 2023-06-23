@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# sound files
+/public/audio/beep.wav
+/public/audio/game.wav
+/public/audio/punch.wav

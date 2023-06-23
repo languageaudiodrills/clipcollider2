@@ -2,13 +2,16 @@ type Item = {
   key: string;
   space?: number;
   clip?: number;
+  replace?: boolean;
+  replacements?: string[];
 };
 
 
 
-const colliderOrder: Item[] = [
+const flashOrder: Item[] = [
   {
-    key: "theSpanishPhrase",
+    key: "theSpanish",
+    replace: true,
   },
   {
     key: "spanishPhrase",
@@ -26,8 +29,9 @@ const colliderOrder: Item[] = [
     space: 0.5,
   },
 // 5
-{
-    key: "nowMimicThePhrase",
+  {
+    key: "nowMimicThe",
+    replace: true,
   },
   {
     key: "spanishPhraseSlowedDown",
@@ -51,7 +55,8 @@ const colliderOrder: Item[] = [
     space: 1,
   },
   {
-    key: "nowPayAttentionForThePhrase",
+    key: "nowPayAttentionForThe",
+    replace: true,
   },
   {
     key: "spanishPhraseSlowedDown",
@@ -113,7 +118,8 @@ const colliderOrder: Item[] = [
 const looperOrder: Item[] = [
   // practice mimicking along with the phrase...
   {
-    key: "practiceMimickingThePhrase",
+    key: "practiceMimickingThe",
+    replace: true,
   },
   {
     key: "spanishPhrase",
@@ -187,8 +193,9 @@ const looperOrder: Item[] = [
 
 
 const order = {
-  collider: colliderOrder,
-  looper: looperOrder,
+  flashTrack: flashOrder,
+  looperTrack: looperOrder,
 } as { [key: string]: Item[]};
 
 export default order;
+export type {Item};

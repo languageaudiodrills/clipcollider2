@@ -7,8 +7,12 @@ import { ChangeEventHandler, useRef, useState } from "react";
 const App = () => {
   // Downloaded file name
   const [name, setName] = useState("clip");
+  
   // Auto-level flag
   const [autoLevel, setAutoLevel] = useState(false);
+
+  // Track type
+  const [trackType, setTrackType] = useState('phrase')
 
   // Refs to file inputs
   const inputs = {
@@ -24,7 +28,7 @@ const App = () => {
   
 
   const reqFiles = {
-    collider: [
+    flashTrack: [
       'spanishPhrase',
       'englishPhrase',
       'spanishPhraseSlowedDown',
@@ -32,7 +36,7 @@ const App = () => {
       'example2',
       'example3',
     ], 
-    looper: [
+    looperTrack: [
       'spanishPhrase',
       'spanishPhraseSlowedDown',
     ]
@@ -67,7 +71,8 @@ const App = () => {
       autoLevel,
       name,
       urls,
-      orderString
+      orderString,
+      trackType
     });
   };
 
@@ -87,6 +92,17 @@ const App = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+      </Row>
+
+      {/* Select track type */}
+      <Row name="Track type">
+        <select 
+          onChange={e => setTrackType(e.target.value)}>
+          <option value="phrase">Phrase</option>
+          <option value="term">Term</option>
+          <option value="conjVerb">Verb - Conjugated</option>
+          <option value="infVerb">Verb - Infinitive</option>
+        </select>
       </Row>
 
       {/* Uploaded files */}
@@ -109,12 +125,12 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'collider'})}>Collide</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack</button>
       </Row>
 
       {/* Looper button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looper'})}>Looper</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack</button>
       </Row>
     </div>
   );
