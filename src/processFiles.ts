@@ -3,66 +3,6 @@ import levelVolumes from "./levelVolumes";
 import order, {Item} from "./order";
 import record from "./record";
 
-// const swaps = {
-//   flash: {
-//     'phrase': [
-//       'flashTrack/intros/game',
-//       'game',
-//       'game',
-//     ],
-//     'term': [
-//       'beep',
-//       'beep',
-//       'beep',
-//     ],
-//     'verbConj': [
-//       'punch',
-//       'punch',
-//       'punch',
-//     ],
-//     'verbInf': [
-//       'game',
-//       'game',
-//       'game',
-//     ]
-//   },
-  
-//   looper: {
-//     'phrase': [
-//       'game',
-//       'game',
-//       'game',
-//     ],
-//     'term': [
-//       'beep',
-//       'beep',
-//       'beep',
-//     ],
-//     'verbConj': [
-//       'punch',
-//       'punch',
-//       'punch',
-//     ],
-//     'verbInf': [
-//       'game',
-//       'game',
-//       'game',
-//     ]
-//   }
-
-// } as {
-//   [key: string]: {
-//     [key: string]: string[];
-//   },
-// };
-
-// const replacements = [
-//   "phrase",
-//   "term",
-//   "conjVerb",
-//   "infVerb",
-// ];
-
 
 const modifyOrder = async(p: {
   order: Item[];
@@ -71,8 +11,6 @@ const modifyOrder = async(p: {
 }) => {
   // get args
   const {order, orderString, typeString} = p;
-
-  let keyCounter = 0;
 
   // loop over every key
   for(let i = 0; i < order.length; i++){
@@ -94,8 +32,6 @@ const modifyOrder = async(p: {
     }
   }
 }
-
-
 
 
 const processFiles = async (p: {
