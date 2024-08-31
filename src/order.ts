@@ -1,8 +1,8 @@
 type Item = {
   key: string;
-  space?: number;
-  clip?: number;
-  replace?: boolean;
+  space?: number;             // creates a pause after clip
+  clip?: number;              // removes time from end of clip
+  replace?: boolean;          // replace based on the type
   replacements?: string[];
 };
 
@@ -10,104 +10,87 @@ type Item = {
 
 const flashOrder: Item[] = [
   {
-    key: "theSpanish",
-    replace: true,
+    key: "spanishPhrase",
+    clip: 0.5,
+  },
+  {
+    key: "englishPhrase",
+    clip: 0.5,
+    space: 0.5,
+  },
+  {
+    key: "FT-shadow5Times",
+  },
+  // 5
+  {
+    key: "spanishPhrase",
+    clip: 0.5,
   },
   {
     key: "spanishPhrase",
     clip: 0.5,
   },
   {
-    key: "wouldBeSimilarToSaying",
-  },
-{
-    key: "englishPhrase",
+    key: "spanishPhrase",
     clip: 0.5,
   },
-{
-    key: "inEnglish",
-    space: 0.5,
-  },
-// 5
   {
-    key: "nowMimicThe",
-    replace: true,
+    key: "spanishPhrase",
+    clip: 0.5,
   },
   {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-  {
-    key: "asTheAudioLoops3Times",
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-// 10
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
+    key: "spanishPhrase",
+    clip: 0.5,
     space: 1,
   },
+// 7
   {
-    key: "nowPayAttentionForThe",
-    replace: true,
+    key: "listenForThePhrase",
   },
   {
-    key: "spanishPhraseSlowedDown",
+    key: "spanishPhrase",
     clip: 0.6,
   },
   {
-    key: "inTheFollowing3Examples",
-    space: 0.6,
+    key: "FT-in-following-3-clips",
+    space: 1,
   },
+  // 9
   {
     key: "ejemploUno",
   },
-// 15
   {
     key: "example1",
-    space: 1,
+    space: 1.5,
   },
   {
     key: "ejemploDos",
   },
   {
     key: "example2",
-    space: 1,
+    space: 1.5,
   },
   {
     key: "ejemploTres",
   },
   {
     key: "example3",
-    space: 1,
-  },
-// 20
-  {
-    key: "toSay",
+    space: 1.5,
   },
   {
-    key: "englishPhrase",
+    key: "FT-now-shadow-3-more-times",
   },
   {
-    key: "inSpanishYouWouldSay",
+    key: "spanishPhrase",
     clip: 0.5,
   },
   {
     key: "spanishPhrase",
+    clip: 0.5,
   },
   {
     key: "spanishPhrase",
-  },
-// 25
-  {
-    key: "spanishPhrase",
+    clip: 0.5,
     space: 2,
   },
 ];
@@ -118,36 +101,17 @@ const flashOrder: Item[] = [
 const looperOrder: Item[] = [
   // practice mimicking along with the phrase...
   {
-    key: "practiceMimickingThe",
-    replace: true,
+    key: "LT-the-phrase-is",
   },
   {
     key: "spanishPhrase",
     clip: 0.5,
+    space: 0.5,
   },
   {
-    key: "asTheAudioLoopsAtReducedSpeed",
+    key: "LT-shadow-phrase-10-times",
   },
-
-  // 3 slow
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-  {
-    key: "spanishPhraseSlowedDown",
-    clip: 0.6,
-  },
-
-  {
-    key: "nowContinue",
-  },
-
-  // 7 normal
+  // loop 10 times
   {
     key: "spanishPhrase",
     clip: 0.4,
@@ -191,6 +155,94 @@ const looperOrder: Item[] = [
   },
 ];
 
+
+const clipOrder: Item[] = [
+  {
+    key: "CT-listen-for-phrase",
+  },
+  {
+    key: "spanishPhrase",
+    clip: 0.4,
+  },
+  {
+    key: "CT-in-following-10-clips",
+    space: 1,
+  },
+  // 10 examples
+  {
+    key: "ejemploUno",
+  },
+  {
+    key: "example1",
+    space: 1.5,
+  },
+  {
+    key: "ejemploDos",
+  },
+  {
+    key: "example2",
+    space: 1.5,
+  },
+  {
+    key: "ejemploTres",
+  },
+  {
+    key: "example3",
+    space: 1.5,
+  },
+  // 3
+  {
+    key: "ejem4",
+  },
+  {
+    key: "example4",
+    space: 1.5,
+  },
+  {
+    key: "ejem5",
+  },
+  {
+    key: "example5",
+    space: 1.5,
+  },
+  {
+    key: "ejem6",
+  },
+  {
+    key: "example6",
+    space: 1.5,
+  },
+  // 6
+  {
+    key: "ejem7",
+  },
+  {
+    key: "example7",
+    space: 1.5,
+  },
+  {
+    key: "ejem8",
+  },
+  {
+    key: "example8",
+    space: 1.5,
+  },
+  {
+    key: "ejem9",
+  },
+  {
+    key: "example9",
+    space: 1.5,
+  },
+  // 9
+  {
+    key: "ejem10",
+  },
+  {
+    key: "example10",
+    space: 2,
+  },
+];
 
 const order = {
   flashTrack: flashOrder,
