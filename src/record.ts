@@ -45,7 +45,7 @@ const record = (p: {
       player.start();
 
       // stop the clip, if specified,
-      // at time of playing, plus the length of the clip minus 0.5 seconds
+      // at time of playing, plus the length of the clip minus clip amount
       if( clip !== 0 ){
         player.stop( ("+" + (time-clip).toString()) );
       }

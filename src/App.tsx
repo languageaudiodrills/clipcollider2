@@ -22,6 +22,13 @@ const App = () => {
     example1: useRef<HTMLInputElement>(null),
     example2: useRef<HTMLInputElement>(null),
     example3: useRef<HTMLInputElement>(null),
+    example4: useRef<HTMLInputElement>(null),
+    example5: useRef<HTMLInputElement>(null),
+    example6: useRef<HTMLInputElement>(null),
+    example7: useRef<HTMLInputElement>(null),
+    example8: useRef<HTMLInputElement>(null),
+    example9: useRef<HTMLInputElement>(null),
+    example10: useRef<HTMLInputElement>(null),
   } as {
     [key: string]: React.RefObject<HTMLInputElement>,
   };
@@ -39,7 +46,20 @@ const App = () => {
     looperTrack: [
       'spanishPhrase',
       'spanishPhraseSlowedDown',
-    ]
+    ],
+    clipTrack: [
+      'spanishPhrase',
+      'example1',
+      'example2',
+      'example3',
+      'example4',
+      'example5',
+      'example6',
+      'example7',
+      'example8',
+      'example9',
+      'example10',
+    ],
   } as {
     [key: string]: string[],
   };
@@ -131,6 +151,10 @@ const App = () => {
       {/* Looper button */}
       <Row name="">
         <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack</button>
+      </Row>
+
+      <Row name="">
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrack'})}>Create Cliptrack</button>
       </Row>
     </div>
   );
