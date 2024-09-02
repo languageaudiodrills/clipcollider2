@@ -18,7 +18,6 @@ const App = () => {
   const inputs = {
     spanishPhrase: useRef<HTMLInputElement>(null),
     englishPhrase: useRef<HTMLInputElement>(null),
-    spanishPhraseSlowedDown: useRef<HTMLInputElement>(null),
     example1: useRef<HTMLInputElement>(null),
     example2: useRef<HTMLInputElement>(null),
     example3: useRef<HTMLInputElement>(null),
@@ -38,14 +37,12 @@ const App = () => {
     flashTrack: [
       'spanishPhrase',
       'englishPhrase',
-      'spanishPhraseSlowedDown',
       'example1',
       'example2',
       'example3',
     ], 
     looperTrack: [
       'spanishPhrase',
-      'spanishPhraseSlowedDown',
     ],
     clipTrack: [
       'spanishPhrase',
