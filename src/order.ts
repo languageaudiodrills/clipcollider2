@@ -19,7 +19,8 @@ const flashOrder: Item[] = [
     space: 0.5,
   },
   {
-    key: "FT-shadow5Times",
+    key: "nowShadowTheThing5Times",
+    replace: true,
   },
   // 5
   {
@@ -45,40 +46,42 @@ const flashOrder: Item[] = [
   },
 // 7
   {
-    key: "listenForThePhrase",
+    key: "listenForThe",
+    replace: true,
   },
   {
     key: "spanishPhrase",
     clip: 0.6,
   },
   {
-    key: "FT-in-following-3-clips",
+    key: "inTheFollowing3Clips",
     space: 1,
   },
   // 9
   {
-    key: "ejemploUno",
+    key: "ClipOne",
   },
   {
     key: "example1",
     space: 1.5,
   },
   {
-    key: "ejemploDos",
+    key: "ClipTwo",
   },
   {
     key: "example2",
     space: 1.5,
   },
   {
-    key: "ejemploTres",
+    key: "ClipThree",
   },
   {
     key: "example3",
     space: 1.5,
   },
   {
-    key: "FT-now-shadow-3-more-times",
+    key: "nowShadowTheThing3MoreTimes",
+    replace: true,
   },
   {
     key: "spanishPhrase",
@@ -101,7 +104,8 @@ const flashOrder: Item[] = [
 const looperOrder: Item[] = [
   // practice mimicking along with the phrase...
   {
-    key: "LT-the-phrase-is",
+    key: "theThingIs",
+    replace: true,
   },
   {
     key: "spanishPhrase",
@@ -109,7 +113,8 @@ const looperOrder: Item[] = [
     space: 0.5,
   },
   {
-    key: "LT-shadow-phrase-10-times",
+    key: "shadowTheThing10Times",
+    replace: true,
   },
   // loop 10 times
   {
@@ -158,33 +163,37 @@ const looperOrder: Item[] = [
 
 const clipOrder: Item[] = [
   {
-    key: "CT-listen-for-phrase",
+    key: "listenForTheThing",
+    replace: true,
   },
   {
     key: "spanishPhrase",
     clip: 0.4,
   },
   {
-    key: "CT-in-following-10-clips",
+    key: "inTheFollowing10Clips",
     space: 1,
   },
   // 10 examples
   {
-    key: "ejemploUno",
+    key: "number1",
+    clip: 0.75,
   },
   {
     key: "example1",
     space: 1.5,
   },
   {
-    key: "ejemploDos",
+    key: "number2",
+    clip: 0.75,
   },
   {
     key: "example2",
     space: 1.5,
   },
   {
-    key: "ejemploTres",
+    key: "number3",
+    clip: 0.75,
   },
   {
     key: "example3",
@@ -192,21 +201,24 @@ const clipOrder: Item[] = [
   },
   // 3
   {
-    key: "ejem4",
+    key: "number4",
+    clip: 0.75,
   },
   {
     key: "example4",
     space: 1.5,
   },
   {
-    key: "ejem5",
+    key: "number5",
+    clip: 0.75,
   },
   {
     key: "example5",
     space: 1.5,
   },
   {
-    key: "ejem6",
+    key: "number6",
+    clip: 0.75,
   },
   {
     key: "example6",
@@ -214,21 +226,24 @@ const clipOrder: Item[] = [
   },
   // 6
   {
-    key: "ejem7",
+    key: "number7",
+    clip: 0.75,
   },
   {
     key: "example7",
     space: 1.5,
   },
   {
-    key: "ejem8",
+    key: "number8",
+    clip: 0.75,
   },
   {
     key: "example8",
     space: 1.5,
   },
   {
-    key: "ejem9",
+    key: "number9",
+    clip: 0.75,
   },
   {
     key: "example9",
@@ -236,7 +251,8 @@ const clipOrder: Item[] = [
   },
   // 9
   {
-    key: "ejem10",
+    key: "number10",
+    clip: 0.75,
   },
   {
     key: "example10",
@@ -247,6 +263,7 @@ const clipOrder: Item[] = [
 const order = {
   flashTrack: flashOrder,
   looperTrack: looperOrder,
+  clipTrack: clipOrder,
 } as { [key: string]: Item[]};
 
 export default order;
