@@ -3,6 +3,7 @@ import levelVolumes from "./levelVolumes";
 import order, {Item} from "./order";
 import record from "./record";
 
+const targetVol = -16;
 
 const modifyOrder = async(p: {
   order: Item[];
@@ -22,32 +23,24 @@ const modifyOrder = async(p: {
       // ex:              flashTrack    /       intros          /       conjVerb
       const fileString =  orderString + "/" +   order[i].key +  "/"  +  typeString;
 
-      console.log(fileString);
-
-      // replace if needed
-      const newItem: Item = {
-        key: fileString,
-      }
-      order[i] = newItem; 
+      order[i].key = fileString;
     }
   }
 }
 
 
 const processFiles = async (p: {
-  autoLevel: boolean;
   name: string;
   urls: Record<string, string>;
   orderString: string;
   trackType: string;
 }) => {
   // get argument values  
-  const { autoLevel, name, urls, orderString, trackType } = p;
+  const { name, urls, orderString, trackType } = p;
 
   // get the desired order and length
   const selectedOrder = order[orderString];
   let count = Object.values(selectedOrder).length;
-
   
   // make swaps to order
   modifyOrder({order: selectedOrder, orderString: orderString, typeString: trackType});
@@ -56,16 +49,13 @@ const processFiles = async (p: {
   await Tone.start();
 
   const clips: Tone.Player[] = [];
-  const output = new Tone.Volume(0).toDestination();
+  const output = new Tone.Volume(targetVol).toDestination();
 
   // Level volumes and record after all players have been loaded
   const onload = async () => {
     count -= 1;
     if (count === 0) {
-      if (autoLevel) {
-        await levelVolumes( {output: output, clips: clips, order: selectedOrder} );
-      }
-
+      // await levelVolumes( {output: output, clips: clips, order: selectedOrder} );
       record( {output: output, name: name, clips: clips, order: selectedOrder} );
     }
   };

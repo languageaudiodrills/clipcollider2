@@ -24,8 +24,6 @@ const record = (p: {
   // Play each clip
   let index = -1;
 
-  console.log('hi')
-
   const playNext = () => {
     index++;
 
@@ -38,6 +36,7 @@ const record = (p: {
       // get the length of the clip
       const time = player.buffer.duration;
 
+      // space is added here
       player.onstop = () => {
         setTimeout(playNext, space * 1000);
       };

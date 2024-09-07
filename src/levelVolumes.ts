@@ -7,6 +7,8 @@ type Item = {
   clip?: number;
 };
 
+const targetVol = -16;
+
 // Note: Ideally this would take clips as input
 // and output new clips with adjusted volumes
 // but it is currently a side effect of the function
@@ -31,18 +33,15 @@ const levelVolumes = async (p: {
 
   // Average volumes and adjust each accordingly
   const applyVolumes = () => {
-    const averageVolumes = Object.values(averageVolumesByClip);
-    const overallAverageVolume =
-      averageVolumes.reduce(sum, 0) / averageVolumes.length;
 
     for (const [indexString, { key }] of Object.entries(order)) {
       const player = clips[Number(indexString)];
       const averageVolume = averageVolumesByClip[key];
-      const volumeDelta = overallAverageVolume - averageVolume;
+      const volumeDelta = targetVol - averageVolume;
 
       console.log("Apply", { key, averageVolume, volumeDelta });
 
-      const volume = new Tone.Volume(volumeDelta);
+      const volume = new Tone.Volume(targetVol);
 
       player.connect(volume);
       volume.connect(output);

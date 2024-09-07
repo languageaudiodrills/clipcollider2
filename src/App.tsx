@@ -8,9 +8,6 @@ const App = () => {
   // Downloaded file name
   const [name, setName] = useState("clip");
   
-  // Auto-level flag
-  const [autoLevel, setAutoLevel] = useState(false);
-
   // Track type
   const [trackType, setTrackType] = useState('phrase')
 
@@ -85,17 +82,11 @@ const App = () => {
 
     // Pass off file name and urls
     processFiles({
-      autoLevel,
       name,
       urls,
       orderString,
       trackType
     });
-  };
-
-  // Toggle auto-level
-  const toggleAutoLevel: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setAutoLevel(event.target.checked);
   };
 
   return (
@@ -134,11 +125,6 @@ const App = () => {
           </Row>
         );
       })}
-
-      {/* Auto-level toggle */}
-      <Row name="">
-        <input type="checkbox" onInput={toggleAutoLevel} /> Auto-level
-      </Row>
 
       {/* Collide button */}
       <Row name="">

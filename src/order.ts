@@ -10,6 +10,10 @@ type Item = {
 
 const flashOrder: Item[] = [
   {
+    key: "tone",
+    space: 0.5,
+  },
+  {
     key: "spanishPhrase",
     clip: 0.5,
   },
@@ -48,6 +52,7 @@ const flashOrder: Item[] = [
   {
     key: "listenForThe",
     replace: true,
+    clip: .9,
   },
   {
     key: "spanishPhrase",
@@ -55,25 +60,25 @@ const flashOrder: Item[] = [
   },
   {
     key: "inTheFollowing3Clips",
-    space: 1,
+    space: .5,
   },
   // 9
   {
-    key: "ClipOne",
+    key: "number1",
   },
   {
     key: "example1",
     space: 1.5,
   },
   {
-    key: "ClipTwo",
+    key: "number2",
   },
   {
     key: "example2",
     space: 1.5,
   },
   {
-    key: "ClipThree",
+    key: "number3",
   },
   {
     key: "example3",
