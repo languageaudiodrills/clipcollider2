@@ -58,10 +58,10 @@ const App = () => {
     [key: string]: string[],
   };
 
+  // retrieves the input files required for the desired track type
   const getURLsAndProcess = ({orderString}: {orderString: string}) => {
     const urls: Record<string, string> = {};
 
-    // get the required file list for the selected recording to be produced
     const fileNameList = reqFiles[orderString];
 
     for (const [key, fileName] of Object.entries(fileNameList)){

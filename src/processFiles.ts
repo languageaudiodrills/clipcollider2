@@ -1,9 +1,7 @@
 import * as Tone from "tone";
-import levelVolumes from "./levelVolumes";
 import order, {Item} from "./order";
 import record from "./record";
 
-const targetVol = -16;
 
 const modifyOrder = async(p: {
   order: Item[];
@@ -24,6 +22,7 @@ const modifyOrder = async(p: {
       const fileString =  orderString + "/" +   order[i].key +  "/"  +  typeString;
 
       order[i].key = fileString;
+      order[i].replace = false;
     }
   }
 }
@@ -49,13 +48,12 @@ const processFiles = async (p: {
   await Tone.start();
 
   const clips: Tone.Player[] = [];
-  const output = new Tone.Volume(targetVol).toDestination();
+  const output = new Tone.Volume(0).toDestination();
 
   // Level volumes and record after all players have been loaded
   const onload = async () => {
     count -= 1;
     if (count === 0) {
-      // await levelVolumes( {output: output, clips: clips, order: selectedOrder} );
       record( {output: output, name: name, clips: clips, order: selectedOrder} );
     }
   };
@@ -73,9 +71,11 @@ const processFiles = async (p: {
       },
     });
 
-    player.connect(output);
     clips.push(player);
   }
 };
 
 export default processFiles;
+
+
+
