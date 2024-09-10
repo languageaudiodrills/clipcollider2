@@ -11,7 +11,7 @@ type Item = {
 const flashOrder: Item[] = [
   {
     key: "tone",
-    space: 0.5,
+    clip: 0.5,
   },
   {
     key: "spanishPhrase",

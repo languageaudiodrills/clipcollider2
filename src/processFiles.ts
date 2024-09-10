@@ -22,6 +22,7 @@ const modifyOrder = async(p: {
       const fileString =  orderString + "/" +   order[i].key +  "/"  +  typeString;
 
       order[i].key = fileString;
+      order[i].replace = false;
     }
   }
 }
@@ -51,11 +52,8 @@ const processFiles = async (p: {
 
   // Level volumes and record after all players have been loaded
   const onload = async () => {
-    
-
     count -= 1;
     if (count === 0) {
-      // await levelVolumes( {output: output, clips: clips, order: selectedOrder} );
       record( {output: output, name: name, clips: clips, order: selectedOrder} );
     }
   };
@@ -73,7 +71,6 @@ const processFiles = async (p: {
       },
     });
 
-    
     clips.push(player);
   }
 };
