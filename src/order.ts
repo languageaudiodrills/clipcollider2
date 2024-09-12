@@ -4,6 +4,7 @@ type Item = {
   clip?: number;              // removes time from end of clip
   replace?: boolean;          // replace based on the type
   replacements?: string[];
+  targetVol?: number;         // volume to adjust the clip to (db)
 };
 
 
@@ -69,6 +70,7 @@ const flashOrder: Item[] = [
   {
     key: "example1",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number2",
@@ -76,6 +78,7 @@ const flashOrder: Item[] = [
   {
     key: "example2",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number3",
@@ -83,6 +86,7 @@ const flashOrder: Item[] = [
   {
     key: "example3",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "nowShadowTheThing3MoreTimes",
@@ -187,6 +191,7 @@ const clipOrder: Item[] = [
   {
     key: "example1",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number2",
@@ -195,6 +200,7 @@ const clipOrder: Item[] = [
   {
     key: "example2",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number3",
@@ -203,6 +209,7 @@ const clipOrder: Item[] = [
   {
     key: "example3",
     space: 1.5,
+    targetVol: -14,
   },
   // 3
   {
@@ -212,6 +219,7 @@ const clipOrder: Item[] = [
   {
     key: "example4",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number5",
@@ -220,6 +228,7 @@ const clipOrder: Item[] = [
   {
     key: "example5",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number6",
@@ -228,6 +237,7 @@ const clipOrder: Item[] = [
   {
     key: "example6",
     space: 1.5,
+    targetVol: -14,
   },
   // 6
   {
@@ -237,6 +247,7 @@ const clipOrder: Item[] = [
   {
     key: "example7",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number8",
@@ -245,6 +256,7 @@ const clipOrder: Item[] = [
   {
     key: "example8",
     space: 1.5,
+    targetVol: -14,
   },
   {
     key: "number9",
@@ -253,6 +265,7 @@ const clipOrder: Item[] = [
   {
     key: "example9",
     space: 1.5,
+    targetVol: -14,
   },
   // 9
   {
@@ -262,6 +275,7 @@ const clipOrder: Item[] = [
   {
     key: "example10",
     space: 2,
+    targetVol: -14,
   },
 ];
 
