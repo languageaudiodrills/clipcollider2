@@ -1,10 +1,6 @@
 import * as Tone from "tone";
 import download from "./download";
 
-
-
-const targetVol = -16;
-
 // sum function
 const sum = (previous: number, current: number) => previous + current;
 
@@ -76,6 +72,7 @@ const record = async (p: {
     const { space = 0 } = order[index];
     const { clip = 0 } = order[index];
     const { key = "none"} = order[index];
+    const { targetVol = -16 }  = order[index];
     const player = clips[index];
   
     // get the length of the clip
@@ -90,7 +87,7 @@ const record = async (p: {
     gainNode.connect(recorder);
     gainNode.connect(output);
   
-    console.log(`Adjusting volume for ${key}, prev: ${clipVol}, adjust by: ${targetVol - clipVol}`);
+    console.log(`Adjusting volume for ${key} to ${targetVol}, prev: ${clipVol}, adjust by: ${targetVol - clipVol}`);
   
     await playClip(player, time, clip, space);
     
