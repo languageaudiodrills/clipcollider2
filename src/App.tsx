@@ -14,6 +14,7 @@ const App = () => {
   // Refs to file inputs
   const inputs = {
     spanishPhrase: useRef<HTMLInputElement>(null),
+    spanishPhraseFemale: useRef<HTMLInputElement>(null),
     englishPhrase: useRef<HTMLInputElement>(null),
     example1: useRef<HTMLInputElement>(null),
     example2: useRef<HTMLInputElement>(null),
@@ -33,6 +34,13 @@ const App = () => {
   const reqFiles = {
     flashTrack: [
       'spanishPhrase',
+      'englishPhrase',
+      'example1',
+      'example2',
+      'example3',
+    ], 
+    flashTrackFemale: [
+      'spanishPhraseFemale',
       'englishPhrase',
       'example1',
       'example2',
@@ -128,7 +136,11 @@ const App = () => {
 
       {/* Collide button */}
       <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack - Male</button>
+      </Row>
+      
+      <Row name="">
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrackFemale'})}>Create Flashtrack - Female</button>
       </Row>
 
       {/* Looper button */}

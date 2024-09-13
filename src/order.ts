@@ -16,7 +16,6 @@ const flashOrder: Item[] = [
   },
   {
     key: "spanishPhrase",
-    clip: 0.5,
   },
   {
     key: "englishPhrase",
@@ -47,7 +46,7 @@ const flashOrder: Item[] = [
   {
     key: "spanishPhrase",
     clip: 0.5,
-    space: 1,
+    space: 1.5,
   },
 // 7
   {
@@ -108,6 +107,102 @@ const flashOrder: Item[] = [
 ];
 
 
+const flashOrderFemale: Item[] = [
+  {
+    key: "tone",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+  },
+  {
+    key: "englishPhrase",
+    clip: 0.5,
+    space: 0.5,
+  },
+  {
+    key: "nowShadowTheThing5Times",
+    replace: true,
+  },
+  // 5
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+    space: 1.5,
+  },
+// 7
+  {
+    key: "listenForThe",
+    replace: true,
+    clip: .9,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.6,
+  },
+  {
+    key: "inTheFollowing3Clips",
+    space: .5,
+  },
+  // 9
+  {
+    key: "number1",
+  },
+  {
+    key: "example1",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number2",
+  },
+  {
+    key: "example2",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number3",
+  },
+  {
+    key: "example3",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "nowShadowTheThing3MoreTimes",
+    replace: true,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+    space: 2,
+  },
+];
 
 
 const looperOrder: Item[] = [
@@ -283,6 +378,7 @@ const order = {
   flashTrack: flashOrder,
   looperTrack: looperOrder,
   clipTrack: clipOrder,
+  flashTrackFemale: flashOrderFemale,
 } as { [key: string]: Item[]};
 
 export default order;
