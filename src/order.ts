@@ -16,7 +16,6 @@ const flashOrder: Item[] = [
   },
   {
     key: "spanishPhrase",
-    clip: 0.5,
   },
   {
     key: "englishPhrase",
@@ -47,7 +46,7 @@ const flashOrder: Item[] = [
   {
     key: "spanishPhrase",
     clip: 0.5,
-    space: 1,
+    space: 1.5,
   },
 // 7
   {
