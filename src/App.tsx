@@ -1,4 +1,5 @@
 import "./App.css";
+import * as Tone from "tone";
 import Row from "./Row";
 import clipNamesByType, { ClipType } from "./clipNamesByType";
 import processFiles from "./processFiles";
@@ -97,9 +98,28 @@ const App = () => {
     });
   };
 
+  const stopRunning = () => {
+    console.log('disposing');
+    Tone.Transport.stop();
+  }
+
   return (
     <div className="App">
-      <h2>The Clip Collider</h2>
+      <h2>The Clip Collider </h2>
+
+      <Row name="">
+        <button onPointerDown={() => stopRunning()}>Stop Running</button>
+      </Row>
+
+      {/* Collide button */}
+      <Row name="" id="buttons">
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack - Male</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrackFemale'})}>Create Flashtrack - Female</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack - Male</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrackFemale'})}>Create Looptrack - Female</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrack'})}>Create Cliptrack - Male</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrackFemale'})}>Create Cliptrack - Female</button>
+      </Row>
 
       {/* Downloaded file name */}
       <Row name="Name">
@@ -128,29 +148,12 @@ const App = () => {
         }
 
         return (
-          <Row key={index} name={name}>
-            <input ref={inputs[type as ClipType]} type="file" />
-          </Row>
+            <Row key={index} name={name}>
+              <input ref={inputs[type as ClipType]} type="file" />
+            </Row>
         );
       })}
 
-      {/* Collide button */}
-      <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack - Male</button>
-      </Row>
-      
-      <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrackFemale'})}>Create Flashtrack - Female</button>
-      </Row>
-
-      {/* Looper button */}
-      <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack</button>
-      </Row>
-
-      <Row name="">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrack'})}>Create Cliptrack</button>
-      </Row>
     </div>
   );
 };

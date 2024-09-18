@@ -6,6 +6,13 @@
   flex-direction: row;
 }
 
+#buttons > .column:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 50%;
+}
+
 .Row:first-of-type {
   border-top: var(--border);
 }
@@ -15,10 +22,19 @@
   border-bottom: none;
 }
 
-.Row > .column {
-  width: 50%;
+.Row:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+.Row > column {
+  width: 80%;
+}
+
+/* name col */
+.Row > .column:first-child {
+  width: 20%;
 }
 
 .Row:hover {
-  background-color: #ededed;
+  background-color: #dde5eb;
 }
