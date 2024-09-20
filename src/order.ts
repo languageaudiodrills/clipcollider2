@@ -264,6 +264,65 @@ const looperOrder: Item[] = [
   },
 ];
 
+const looperOrderFemale: Item[] = [
+  // practice mimicking along with the phrase...
+  {
+    key: "theThingIs",
+    replace: true,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.5,
+    space: 0.5,
+  },
+  {
+    key: "shadowTheThing10Times",
+    replace: true,
+  },
+  // loop 10 times
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+    space: 2,
+  },
+];
+
 
 const clipOrder: Item[] = [
   {
@@ -374,11 +433,124 @@ const clipOrder: Item[] = [
   },
 ];
 
+const clipOrderFemale: Item[] = [
+  {
+    key: "listenForTheThing",
+    replace: true,
+  },
+  {
+    key: "spanishPhraseFemale",
+    clip: 0.4,
+  },
+  {
+    key: "inTheFollowing10Clips",
+    space: 1,
+  },
+  // 10 examples
+  {
+    key: "number1",
+    clip: 0.75,
+  },
+  {
+    key: "example1",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number2",
+    clip: 0.75,
+  },
+  {
+    key: "example2",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number3",
+    clip: 0.75,
+  },
+  {
+    key: "example3",
+    space: 1.5,
+    targetVol: -14,
+  },
+  // 3
+  {
+    key: "number4",
+    clip: 0.75,
+  },
+  {
+    key: "example4",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number5",
+    clip: 0.75,
+  },
+  {
+    key: "example5",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number6",
+    clip: 0.75,
+  },
+  {
+    key: "example6",
+    space: 1.5,
+    targetVol: -14,
+  },
+  // 6
+  {
+    key: "number7",
+    clip: 0.75,
+  },
+  {
+    key: "example7",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number8",
+    clip: 0.75,
+  },
+  {
+    key: "example8",
+    space: 1.5,
+    targetVol: -14,
+  },
+  {
+    key: "number9",
+    clip: 0.75,
+  },
+  {
+    key: "example9",
+    space: 1.5,
+    targetVol: -14,
+  },
+  // 9
+  {
+    key: "number10",
+    clip: 0.75,
+  },
+  {
+    key: "example10",
+    space: 2,
+    targetVol: -14,
+  },
+];
+
+
+
 const order = {
   flashTrack: flashOrder,
-  looperTrack: looperOrder,
-  clipTrack: clipOrder,
   flashTrackFemale: flashOrderFemale,
+  looperTrack: looperOrder,
+  looperTrackFemale: looperOrderFemale,
+  clipTrack: clipOrder,
+  clipTrackFemale: clipOrderFemale,
 } as { [key: string]: Item[]};
 
 export default order;
