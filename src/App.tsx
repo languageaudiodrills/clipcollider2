@@ -50,6 +50,9 @@ const App = () => {
     looperTrack: [
       'spanishPhrase',
     ],
+    looperTrackFemale: [
+      'spanishPhraseFemale'
+    ],
     clipTrack: [
       'spanishPhrase',
       'example1',
@@ -107,22 +110,17 @@ const App = () => {
     <div className="App">
       <h2>The Clip Collider </h2>
 
-      <Row name="">
-        <button onPointerDown={() => stopRunning()}>Stop Running</button>
-      </Row>
-
       {/* Collide button */}
       <Row name="" id="buttons">
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Create Flashtrack - Male</button>
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrackFemale'})}>Create Flashtrack - Female</button>
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Create Looptrack - Male</button>
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrackFemale'})}>Create Looptrack - Female</button>
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrack'})}>Create Cliptrack - Male</button>
-        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrackFemale'})}>Create Cliptrack - Female</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrack'})}>Flashtrack (M)</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'flashTrackFemale'})}>Flashtrack (F)</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrack'})}>Looptrack (M)</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'looperTrackFemale'})}>Looptrack (F)</button>
+        <button onPointerDown={() => getURLsAndProcess({orderString: 'clipTrack'})}>Cliptrack</button>
       </Row>
 
       {/* Downloaded file name */}
-      <Row name="Name">
+      <Row name="Name" id="file-name-input">
         <input
           type="text"
           value={name}

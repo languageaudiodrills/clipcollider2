@@ -13,6 +13,15 @@
   width: 50%;
 }
 
+#file-name-input .column:nth-child(2) {
+  width: 50%;
+}
+
+#file-name-input input {
+  width: 60%;
+}
+
+
 .Row:first-of-type {
   border-top: var(--border);
 }
