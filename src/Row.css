@@ -14,11 +14,11 @@
 }
 
 #file-name-input .column:nth-child(2) {
-  width: 50%;
+  width: 80%;
 }
 
 #file-name-input input {
-  width: 60%;
+  width: 90%;
 }
 
 
